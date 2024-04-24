@@ -1,0 +1,17 @@
+version: "1.0"
+
+services:
+  postgres:
+    image: postgres
+    container_name: threads-db
+    ports:
+      - 5432:5432
+    volumes:
+      - postgres_data:/var/lib/postresql/postgres_data
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_DB: threads
+      POSTGRES_PASSWORD: postgres
+
+volumes:
+  postgres_data:
